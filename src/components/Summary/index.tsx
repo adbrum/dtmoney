@@ -1,12 +1,13 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import incomeImg from "../../assets/income.svg";
 import outcomeImg from "../../assets/outcome.svg";
 import totalImg from "../../assets/total.svg";
-import { TransactionsContext } from "../../TransactionContext";
+import { TransactionsContext } from "../../TransactionsContext";
+
 import { Container } from "./styles";
 
 export function Summary() {
-  const transactions = useContext(TransactionsContext);
+  const { transactions } = useContext(TransactionsContext);
 
   console.log(transactions);
 
@@ -28,7 +29,7 @@ export function Summary() {
       </div>
       <div className="highlight-background">
         <header>
-          <p>Entradas</p>
+          <p>Total</p>
           <img src={totalImg} alt="Total" />
         </header>
         <strong>500,00 €</strong>
